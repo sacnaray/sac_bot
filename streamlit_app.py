@@ -9,7 +9,10 @@ st.title("Sachin_BOT")
 
 # Initialize session state for chat history
 if "messages" not in st.session_state:
-    st.session_state.messages = []
+    st.session_state.messages = [
+        {"role": "system", "content": "You are a chatbot that only talks about diet, nutrition, and healthy eating. "
+                                      "If a user asks about anything else (e.g., politics, technology, sports), politely bring the conversation back to diet."}
+    ]
 
 # Display chat history
 for message in st.session_state.messages:
